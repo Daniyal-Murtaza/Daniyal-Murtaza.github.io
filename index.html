@@ -2,74 +2,523 @@
 <html lang="en">
   <head>
   <meta charset="utf-8"/>
-
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-
-  <meta
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    name="viewport"/>
-
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
   <title>Portfolio | Daniyal Murtaza</title>
-
   <meta property="og:title" content="Homepage | Atom Template"/>
-
   <meta property="og:locale" content="en_US"/>
-
-  <link
-    rel="canonical"
-    href="//"/>
-
-  <meta
-    property="og:url"
-    content="//"/>
-
-  <meta
-    name="description"
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-
+    <link rel="canonical" href="//"/>
+    <meta property="og:url" content="//"/>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
   <link rel="icon" type="image/png" href="/assets/img/fav.png"/>
-
   <meta name="theme-color" content="#5540af"/>
-
   <meta property="og:site_name" content="Atom Template"/>
-
   <meta property="og:image" content="//assets/img/social.jpg"/>
-
   <meta name="twitter:card" content="summary_large_image"/>
-
   <meta name="twitter:site" content="@tailwindmade"/>
 
-  <link
-    crossorigin="crossorigin"
-    href="https://fonts.gstatic.com"
-    rel="preconnect"/>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link
-    as="style"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="preload"/>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet"/>
-
-  <link
-    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-    rel="stylesheet"/>
-
-  <link
-    crossorigin="anonymous"
-    href="/assets/styles/main.min.css"
-    media="screen"
-    rel="stylesheet"/>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="/assets/styles/main.min.css" media="screen" rel="stylesheet"/>
   
-  <script
-    defer
-    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
-
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  
+    <style>
+      :root {
+        --primary: #00f5d4;
+        --secondary: #7209b7;
+        --accent: #f72585;
+        --background: #0a0a0a;
+        --text: #ffffff;
+        --gradient-1: linear-gradient(45deg, var(--primary), var(--secondary));
+        --gradient-2: linear-gradient(135deg, var(--accent), var(--primary));
+      }
+
+      body {
+        background: var(--background);
+        color: var(--text);
+        font-family: 'Space Grotesk', sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Enhanced Glass Effect */
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px 0 rgba(0, 245, 212, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .glass-effect:hover {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 245, 212, 0.2);
+        transform: translateY(-5px);
+      }
+
+      /* Enhanced Gradient Text */
+      .gradient-text {
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        display: inline-block;
+      }
+
+      .gradient-text::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: var(--gradient-1);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      .gradient-text:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Enhanced Navigation */
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+      }
+
+      .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: var(--gradient-1);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Enhanced Hero Section */
+      .hero-section {
+        background: linear-gradient(135deg, rgba(0,245,212,0.1) 0%, rgba(114,9,183,0.1) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0,245,212,0.1) 0%, transparent 70%);
+        animation: rotate 20s linear infinite;
+      }
+
+      .hero-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0,245,212,0.05) 0%, rgba(114,9,183,0.05) 100%);
+        z-index: 1;
+      }
+
+      /* Enhanced Cards */
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,245,212,0.1);
+      }
+
+      .animated-link {
+        position: relative;
+        display: inline-block;
+        transition: color 0.3s;
+      }
+      
+      .animated-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: var(--primary);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      
+      .animated-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+      
+      .animated-link:hover {
+        color: var(--primary);
+      }
+
+      .stats-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .stats-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-5px);
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text);
+        transition: all 0.3s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 15px rgba(0,245,212,0.2);
+      }
+
+      .btn-primary {
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,245,212,0.2);
+      }
+
+      /* Paper Plane Animation */
+      .paper-plane {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .paper-plane svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--primary);
+        filter: drop-shadow(0 0 10px rgba(0, 245, 212, 0.5));
+      }
+
+      /* Floating Elements */
+      .floating-element {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .floating-element.circle {
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+      }
+
+      .floating-element.square {
+        border: 2px solid var(--secondary);
+        transform: rotate(45deg);
+      }
+
+      .floating-element.triangle {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 30px solid var(--accent);
+        opacity: 0.1;
+      }
+
+      /* Enhanced Section Transitions */
+      .section-transition {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .section-transition.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Glowing Effects */
+      .glow-effect {
+        position: relative;
+      }
+
+      .glow-effect::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--gradient-1);
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .glow-effect:hover::after {
+        opacity: 0.5;
+      }
+
+      /* Particle Background */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100px);
+          opacity: 0;
+        }
+      }
+
+      /* Enhanced Card Hover Effects */
+      .card-hover-effect {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-hover-effect:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 245, 212, 0.2);
+      }
+
+      .card-hover-effect::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-1);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -1;
+        border-radius: inherit;
+      }
+
+      .card-hover-effect:hover::before {
+        opacity: 0.1;
+      }
+
+      /* Text Gradient Animation */
+      .animated-gradient-text {
+        background: linear-gradient(
+          45deg,
+          var(--primary) 0%,
+          var(--secondary) 25%,
+          var(--accent) 50%,
+          var(--secondary) 75%,
+          var(--primary) 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 8s linear infinite;
+      }
+
+      @keyframes gradient {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
+
+      /* Add new animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px rgba(0, 245, 212, 0.2); }
+        50% { box-shadow: 0 0 20px rgba(0, 245, 212, 0.4); }
+      }
+
+      /* Animated gradient background */
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, 
+          rgba(0, 245, 212, 0.1) 0%,
+          rgba(114, 9, 183, 0.1) 50%,
+          rgba(247, 37, 133, 0.1) 100%
+        );
+        background-size: 200% 200%;
+        animation: gradientBG 15s ease infinite;
+        z-index: 0;
+      }
+
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Enhanced card hover effects */
+      .portfolio-item {
+        transition: all 0.4s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px) scale(1.02);
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Animated stats */
+      .stats-card {
+        transition: all 0.3s ease;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-5px);
+        animation: pulse 2s infinite;
+      }
+
+      /* Enhanced button effects */
+      .btn-primary {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .btn-primary:hover::after {
+        left: 100%;
+      }
+
+      /* Floating elements animation */
+      .floating-element {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Enhanced section transitions */
+      .section-transition {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .section-transition.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Interactive timeline */
+      .timeline-dot {
+        transition: all 0.3s ease;
+      }
+
+      .timeline-dot:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px var(--primary);
+      }
+
+      /* Enhanced form interactions */
+      .contact-form input,
+      .contact-form textarea {
+        transition: all 0.3s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 245, 212, 0.2);
+      }
+
+      /* Scroll progress indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--gradient-1);
+        z-index: 9999;
+        transition: width 0.1s ease;
+      }
+    </style>
 </head>
 
 
@@ -78,35 +527,11 @@
     class="relative"
     x-data="{ mobileMenu: false }">
     
-    <!-- <div
-      class="flex items-center justify-center p-2"
-      style="background-color: #24c790">
-      <img
-        src="https://redpixelthemes.com/assets/images/redpixelthemes-logo-white.svg"
-        alt="red pixel themes logo"
-        class="mr-4 h-8 w-auto md:h-12"/>
-      <p class="w-auto font-body text-xs font-bold text-white md:text-xl">
-        Like what you see? You can download it
-        <a
-          class="inline-block text-white underline"
-          href="https://redpixelthemes.com/templates/atom/"
-          target="_blank">here</a>
-      </p>
-    </div> -->
+    <div class="scroll-progress"></div>
     
     <div id="main" class="relative">
-      <div
-  x-data="{
-    triggerNavItem(id) {
-        $scroll(id)
-    },
-    triggerMobileNavItem(id) {
-        mobileMenu=false;
-        this.triggerNavItem(id)
-    }
-}">
-  <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
-  ">
+      <div x-data="{ triggerNavItem(id) { $scroll(id) }, triggerMobileNavItem(id) { mobileMenu=false; this.triggerNavItem(id) } }">
+        <div class="w-full z-50 top-0 py-3 sm:py-5 absolute glass-effect">
   <div class="container flex items-center justify-between">
     <div>
       <a href="/">
@@ -115,224 +540,98 @@
     </div>
     <div class="hidden lg:block">
       <ul class="flex items-center">
-        
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#about')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-        </li>
-        
+                  <span @click="triggerNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">About</span>
+      </li>
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#services')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                  <span @click="triggerNavItem('#services')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Services</span>
         </li>
-        
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#portfolio')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                  <span @click="triggerNavItem('#portfolio')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Portfolio</span>
         </li>
-        
-        <!-- <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#clients')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-        </li> -->
-        
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#work')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                  <span @click="triggerNavItem('#work')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Work</span>
         </li>
-        
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#statistics')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                  <span @click="triggerNavItem('#statistics')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Statistics</span>
         </li>
-        
-        <!-- <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#blog')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-        </li> -->
-        
         <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#contact')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                  <span @click="triggerNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Contact</span>
         </li>
-        
-      </ul>
+    </ul>
     </div>
     <div class="block lg:hidden">
-      <button @click="mobileMenu = true">
-        <i class="bx bx-menu text-4xl text-white"></i>
+              <button @click="mobileMenu = true" class="text-white hover:text-primary transition-colors">
+                <i class="bx bx-menu text-4xl"></i>
       </button>
     </div>
   </div>
 </div>
 
-<div
-  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-  <div
-    class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-    <button
-      class="absolute top-0 right-0 mt-4 mr-4"
-      @click="mobileMenu = false">
-      <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt=""/>
+        <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden" :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+          <div class="absolute right-0 min-h-screen w-2/3 glass-effect py-4 px-8 shadow md:w-1/3">
+            <button class="absolute top-0 right-0 mt-4 mr-4 text-white hover:text-primary transition-colors" @click="mobileMenu = false">
+              <i class="bx bx-x text-3xl"></i>
     </button>
 
     <ul class="mt-8 flex flex-col">
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#about')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-        
+                <span @click="triggerMobileNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">About</span>
       </li>
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#services')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
-        
+                <span @click="triggerMobileNavItem('#services')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Services</span>
       </li>
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#portfolio')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
-        
+                <span @click="triggerMobileNavItem('#portfolio')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Portfolio</span>
       </li>
-      
-      <!-- <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#clients')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</span>
-        
-      </li> -->
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#work')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-        
+                <span @click="triggerMobileNavItem('#work')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Work</span>
       </li>
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#statistics')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
-        
+                <span @click="triggerMobileNavItem('#statistics')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Statistics</span>
       </li>
-      
-      <!-- <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#blog')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</span>
-        
-      </li> -->
-      
       <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#contact')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-        
+                <span @click="triggerMobileNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white nav-link">Contact</span>
       </li>
-      
     </ul>
   </div>
 </div>
 
-
-<div>
-    <div class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(/assets/img/bg-hero.jpg)">
-      <div class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
-      
+        <div class="hero-section section-transition">
       <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
         <div class="flex flex-col items-center justify-center lg:flex-row">
-          <div class="rounded-full border-8 border-primary shadow-xl">
+              <div class="rounded-full border-4 border-primary shadow-xl glass-effect p-2">
             <img src="/assets/img/daniyal.jpeg" class="h-48 rounded-full sm:h-56" alt="author"/>
           </div>
           <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-            <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
+                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl gradient-text">
               Hi! I'm Daniyal M. Zaidi
             </h1>
             <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
               <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
                 <p class="font-body text-lg uppercase text-white">Let's connect</p>
                 <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-3xl text-yellow"></i>
+                      <i class="bx bx-chevron-right text-3xl text-primary"></i>
                 </div>
               </div>
               <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                
-                  <a href="https://www.linkedin.com/in/daniyal-murtaza/" >
-                    <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+                    <a href="https://www.linkedin.com/in/daniyal-murtaza/" class="hover:text-primary transition-colors">
+                      <i class="bx bxl-linkedin text-2xl text-white"></i>
                   </a>
-  
-                  <a href="https://github.com/Daniyal-Murtaza" class="pl-4">
-                    <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+                    <a href="https://github.com/Daniyal-Murtaza" class="pl-4 hover:text-primary transition-colors">
+                      <i class="bx bxl-github text-2xl text-white"></i>
                   </a>
-
-
-
-                <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4">
-                  <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
+                    <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4 hover:text-primary transition-colors">
+                      <i class="bx bxl-whatsapp text-2xl text-white"></i>
                 </a>
-
-
               </div>
             </div>
             <div class="flex flex-col items-center justify-center pt-5 sm:flex-row sm:pt-5 lg:justify-start">
               <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                <p class="font-body text-lg text-white">Phone: <a href="tel:+18329886552" class="animated-link text-yellow">+1(832) 988-6552</a></p>
+                    <p class="font-body text-lg text-white">Phone: <a href="tel:+18329886552" class="animated-link text-primary">+1(832) 988-6552</a></p>
               </div>
               <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                <p class="font-body text-lg text-white">Email: <a href="mailto:daniyalmurtaza77@gmail.com" class="animated-link text-yellow">daniyalmurtaza77@gmail.com</a></p>
+                    <p class="font-body text-lg text-white">Email: <a href="mailto:daniyalmurtaza77@gmail.com" class="animated-link text-primary">daniyalmurtaza77@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -341,41 +640,7 @@
     </div>
   </div>
   
-  <style>
-  .animated-link {
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s;
-  }
-  
-  .animated-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: yellow;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .animated-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  
-  .animated-link:hover {
-    color: yellow;
-  }
-  </style>
-  
-  
-  
-
-
-<div class="bg-grey-50" id="about">
+      <div class="bg-grey-50 section-transition" id="about">
   <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
     <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
       <h2
@@ -413,7 +678,7 @@
                   <i class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
                 </a>
 
-                <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4">
+                      <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4 hover:text-primary transition-colors">
                   <i class="bx bxl-whatsapp text-2xl text-primary hover:text-yellow"></i>
                 </a>
         </div>
@@ -466,20 +731,16 @@
   </div> 
 </div>
 
-<div class="container py-16 md:py-20" id="services">
-  <h2
-    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+      <div class="container py-16 md:py-20 section-transition" id="services">
+        <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
     Here's what I'm good at
   </h2>
-  <h3
-    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+        <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
     These are the services I offer
   </h3>
 
-  <div
-    class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
-    
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+        <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-development-white.svg" alt="development icon"/>
@@ -489,7 +750,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           WEB DEVELOPMENT
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -498,7 +759,7 @@
       </div>
     </div>
 
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-content-white.svg" alt="content marketing icon"/>
@@ -508,7 +769,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           Technical Writing
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -517,7 +778,7 @@
       </div>
     </div>
 
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-mobile-white.svg" alt="Mobile Application icon"/>
@@ -527,7 +788,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           Mobile Development
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -536,7 +797,7 @@
       </div>
     </div>
 
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-email-white.svg" alt="Email Marketing icon"/>
@@ -546,7 +807,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           Email Development
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -555,7 +816,7 @@
       </div>
     </div>
 
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-design-white.svg" alt="Theme Design icon"/>
@@ -565,7 +826,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           Graphic Design
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -574,7 +835,7 @@
       </div>
     </div>
 
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+          <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
           <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon"/>
@@ -584,7 +845,7 @@
         </div>
       </div>
       <div class="text-center">
-        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+              <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
           Web Design
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
@@ -592,296 +853,351 @@
         </p>
       </div>
     </div>
-
   </div>
 </div>
 
-
-<div class="container py-16 md:py-20" id="portfolio">
-    <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-      Check out my Portfolio
+      <div class="container py-16 md:py-20 section-transition" id="portfolio">
+        <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
+          Featured Projects
     </h2>
-    <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-      Here's what I have done with the past
+        <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+          Showcasing My Technical Excellence
     </h3>
   
     <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
-      <!-- Initial Projects -->
-      <a href="https://horizonfood.dentalclinicsolutions.com/public_html/home.php" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/sand.png" class="w-full shadow" alt="portfolio image"/>
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://horizonfood.dentalclinicsolutions.com/public_html/home.php" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/sand.png" class="w-full transition-transform duration-500" alt="Horizon Food Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">Horizon Food</h3>
+                    <p class="text-sm text-white/80">Full-stack development with real-time order tracking and payment integration</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">React</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Node.js</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">MongoDB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </a>
-      <a href="https://daniyal-murtaza.github.io/prowikiexpert/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/proj4.png" class="w-full shadow" alt="portfolio image"/>
-      </a>
-      <a href="https://daniyal-murtaza.github.io/creatix-mind/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/cret.png" class="w-full shadow" alt="portfolio image"/>
-      </a>
-      <a href="https://daniyal-murtaza.github.io/ghostpublishers/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/ghost.jpeg" class="w-full shadow" alt="portfolio image"/>
-      </a>
-      <a href="https://daniyal-murtaza.github.io/online-academic-helper/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/jojo.png" class="w-full shadow" alt="portfolio image"/>
-      </a>
-      <a href="https://robo-vision.000webhostapp.com/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/rob.png" class="w-full shadow" alt="portfolio image"/>
+          </div>
+
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://daniyal-murtaza.github.io/prowikiexpert/" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/proj4.png" class="w-full transition-transform duration-500" alt="ProWikiExpert Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">ProWikiExpert</h3>
+                    <p class="text-sm text-white/80">Modern wiki platform with advanced search and collaborative editing</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Vue.js</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Firebase</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Tailwind</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://daniyal-murtaza.github.io/creatix-mind/" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/cret.png" class="w-full transition-transform duration-500" alt="Creatix Mind Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">Creatix Mind</h3>
+                    <p class="text-sm text-white/80">AI-powered content creation platform with real-time collaboration</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Next.js</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">OpenAI</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://daniyal-murtaza.github.io/ghostpublishers/" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/ghost.jpeg" class="w-full transition-transform duration-500" alt="Ghost Publishers Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">Ghost Publishers</h3>
+                    <p class="text-sm text-white/80">Digital publishing platform with advanced analytics and SEO tools</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">React</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">GraphQL</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">AWS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </a>
     </div>
   
-<!--     <div id="more-projects" class="hidden mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2"> -->
-      <!-- Additional Projects -->
-<!--       <a href="https://daniyal-murtaza.github.io/ServePakistanFoundation/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
-        <img src="/assets/img/welf.png" class="w-full shadow" alt="portfolio image"/>
-      </a> -->
-      <!-- Add more projects as needed -->
-<!--     </div> -->
-  
-<!--     <div class="text-center pt-8">
-      <button id="load-more" class="bg-primary text-white font-bold py-2 px-4 rounded">
-        Load More
-      </button>
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://daniyal-murtaza.github.io/online-academic-helper/" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/jojo.png" class="w-full transition-transform duration-500" alt="Academic Helper Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">Academic Helper</h3>
+                    <p class="text-sm text-white/80">Educational platform with interactive learning tools and progress tracking</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Angular</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Django</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Redis</span>
     </div>
-  </div> -->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
 
-<!--   <script>
-    document.getElementById('load-more').addEventListener('click', function() {
-      var moreProjects = document.getElementById('more-projects');
-      if (moreProjects.classList.contains('hidden')) {
-        moreProjects.classList.remove('hidden');
-        this.textContent = 'Show Less';
-      } else {
-        moreProjects.classList.add('hidden');
-        this.textContent = 'Load More';
-      }
-    });
-  </script> -->
-  
-
-<!-- <div class="bg-grey-50" id="clients">
-  <div class="container py-16 md:py-20">
-    <div class="mx-auto w-full sm:w-3/4 lg:w-full">
-      <h2
-        class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        My latest clients
-      </h2>
-      <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
-        <span class="m-8 block">
-          <img
-            src="/assets/img/logo-coca-cola.svg"
-            alt="client logo"
-            class="mx-auto block h-12 w-auto"/>
-        </span>
-        <span class="m-8 block">
-          <img
-            src="/assets/img/logo-apple.svg"
-            alt="client logo"
-            class="mx-auto block h-12 w-auto"/>
-        </span>
-
-        <span class="m-8 block">
-          <img
-            src="/assets/img/logo-netflix.svg"
-            alt="client logo"
-            class="mx-auto block h-12 w-auto"/>
-        </span>
-
-        <span class="m-8 block">
-          <img
-            src="/assets/img/logo-amazon.svg"
-            alt="client logo"
-            class="mx-auto block h-12 w-auto"/>
-        </span>
-
-        <span class="m-8 block">
-          <img
-            src="/assets/img/logo-stripe.svg"
-            alt="client logo"
-            class="mx-auto block h-12 w-auto"/>
-        </span>
+          <div class="portfolio-item glass-effect overflow-hidden">
+            <a href="https://robo-vision.000webhostapp.com/" class="block">
+              <div class="relative overflow-hidden">
+                <img src="/assets/img/rob.png" class="w-full transition-transform duration-500" alt="Robo Vision Project"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  <div class="absolute bottom-0 p-6">
+                    <h3 class="text-xl font-bold text-white">Robo Vision</h3>
+                    <p class="text-sm text-white/80">Computer vision application with real-time object detection and tracking</p>
+                    <div class="mt-2 flex gap-2">
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">Python</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">TensorFlow</span>
+                      <span class="rounded-full bg-primary/20 px-3 py-1 text-xs text-primary">OpenCV</span>
       </div>
     </div>
   </div>
-</div> -->
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <a href="https://github.com/Daniyal-Murtaza" class="inline-flex items-center rounded-lg bg-primary/10 px-6 py-3 text-primary hover:bg-primary/20 transition-all duration-300">
+            <span>View More Projects</span>
+            <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+          </a>
+        </div>
+      </div>
 
 <div class="container py-16 md:py-20" id="work">
-  <h2
-    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-    My work experience
-  </h2>
-  <h3
-    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-    Here's what I did
-  </h3>
+        <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
+          Professional Journey
+        </h2>
+        <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+          Building Impactful Solutions
+        </h3>
 
-  <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-    <span class="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
+        <div class="relative mx-auto mt-16 flex w-full flex-col lg:w-4/5">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 top-0 hidden h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:block"></div>
     
-    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-      <div class="md:w-2/5">
-        <div class="flex justify-center md:justify-start">
-          <span class="shrink-0">
-            <img src="/assets/img/BAHL.png" class="h-auto w-32" alt="Bank Al Habib logo"/>
-          </span>
-          <div class="relative ml-3 hidden w-full md:block">
-            <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
+          <!-- Bank Al Habib -->
+          <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-6">
+                  <div>
+                    <span class="block text-2xl font-bold uppercase text-primary">IT Officer</span>
+                    <span class="text-base text-white/60">Bank Al Habib Limited</span>
+                  </div>
+                  <span class="text-base text-white/60">2023 - Present</span>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Led middleware team in developing secure API proxy with OAuth 2.0 authentication, implementing rate limiting and comprehensive logging system</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Optimized message queuing for asynchronous processing, reducing transaction response times by 6% through performance optimization</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Integrated third-party payment gateway with enhanced security measures and real-time transaction monitoring</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Implemented automated testing and CI/CD pipelines, reducing deployment time by 40%</span>
+                  </div>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Java</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Spring Boot</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Microservices</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Docker</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Kubernetes</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Jenkins</span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block"></div>
+            <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12">
+              <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <img src="/assets/img/BAHL.png" class="h-auto w-32 mx-auto" alt="Bank Al Habib logo"/>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="md:w-3/5">
-        <div class="relative flex md:pl-18">
-          <span class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-          <div class="mt-1 flex">
-<!--             <i class="bx bxs-right-arrow hidden text-primary md:block"></i> -->
-            <div class="md:-mt-1 md:pl-8">
-<!--               <span class="block font-body font-bold text-grey-40">January 2025 - March 2025</span> -->
-              <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">IT Officer</span>
-              <div class="pt-2">
-                <span class="block font-body text-black">Worked in Middleware team, integrating third-party payment gateway via a secure API proxy with OAuth 2.0, rate limiting, and logging. Optimized message queuing for asynchronous processing, reducing transaction response times by 6%.</span>
+
+          <!-- Encore Pay -->
+          <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:pr-12 order-2 md:order-1">
+              <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <img src="/assets/img/ENCORE.jpeg" class="h-auto w-32 mx-auto" alt="Encore Pay logo"/>
+              </div>
+            </div>
+            <div class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block"></div>
+            <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12 order-1 md:order-2">
+              <div class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-6">
+                  <div>
+                    <span class="block text-2xl font-bold uppercase text-primary">Software Engineer</span>
+                    <span class="text-base text-white/60">Encore Pay</span>
+                  </div>
+                  <span class="text-base text-white/60">2022 - 2023</span>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Developed real-time analytics dashboard processing 1K+ daily transactions with machine learning-based anomaly detection</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Optimized SQL queries and caching mechanisms, improving dashboard load time by 45%</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Redesigned digital wallet architecture for better scalability, reducing API response times by 12%</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Implemented automated testing suite, reducing server errors by 17% and improving system reliability</span>
+                  </div>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Python</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Django</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">PostgreSQL</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Redis</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">TensorFlow</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digi-Creations -->
+          <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-6">
+                  <div>
+                    <span class="block text-2xl font-bold uppercase text-primary">Associate Software Engineer</span>
+                    <span class="text-base text-white/60">Digi-Creations</span>
+                  </div>
+                  <span class="text-base text-white/60">2021 - 2022</span>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Developed client-facing UI/UX features with real-time data visualization, improving user engagement by 30%</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Created interactive forms with advanced validation and error handling, reducing form submission errors by 25%</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Implemented responsive design principles for cross-platform compatibility, achieving 99% mobile responsiveness</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                    <span class="font-body text-white text-lg">Optimized React state management using Redux and Context API, boosting team efficiency by 35%</span>
+                  </div>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">React</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Redux</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">TypeScript</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Material-UI</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Jest</span>
+                  <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Cypress</span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block"></div>
+            <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12">
+              <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <img src="/assets/img/DIGI.png" class="h-auto w-32 mx-auto" alt="Digi-Creations logo"/>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-      <div class="md:w-2/5">
-        <div class="flex justify-center md:justify-start">
-          <span class="shrink-0">
-            <img src="/assets/img/ENCORE.jpeg" class="h-auto w-32" alt="Encore Pay logo"/>
-          </span>
-          <div class="relative ml-3 hidden w-full md:block">
-            <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-          </div>
-        </div>
-      </div>
-      <div class="md:w-3/5">
-        <div class="relative flex md:pl-18">
-          <span class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-          <div class="mt-1 flex">
-<!--             <i class="bx bxs-right-arrow hidden text-primary md:block"></i> -->
-            <div class="md:-mt-1 md:pl-8">
-<!--               <span class="block font-body font-bold text-grey-40">September 2024 - December 2024</span> -->
-              <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Software Engineer</span>
-              <div class="pt-2">
-                <span class="block font-body text-black">Developed an analytics dashboard to process 1K+ transactions with real-time anomaly detection using optimized SQL queries and caching. Redesigned digital wallet architecture, improving API response times by 12% and reducing server errors by 17%.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-      <div class="md:w-2/5">
-        <div class="flex justify-center md:justify-start">
-          <span class="shrink-0">
-            <img src="/assets/img/DIGI.png" class="h-auto w-32" alt="Digi-Creations logo"/>
-          </span>
-          <div class="relative ml-3 hidden w-full md:block">
-            <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-          </div>
-        </div>
-      </div>
-      <div class="md:w-3/5">
-        <div class="relative flex md:pl-18">
-          <span class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-          <div class="mt-1 flex">
-<!--             <i class="bx bxs-right-arrow hidden text-primary md:block"></i> -->
-            <div class="md:-mt-1 md:pl-8">
-<!--               <span class="block font-body font-bold text-grey-40">January 2022 - December 2022</span> -->
-              <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Associate Software Engineer</span>
-              <div class="pt-2">
-                <span class="block font-body text-black">Developed client-facing UI/UX features, including real-time data visualization and interactive forms, improving engagement by 30%. Optimized React state management, boosting team efficiency by 35%.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-<div
-  class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
-  style="background-image: url(/assets/img/experience-figure.png)"
-  id="statistics">
+      <div class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24 section-transition" id="statistics">
   <div class="container">
-    <div
-      class="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
+          <div class="mx-auto w-5/6 glass-effect py-16 shadow-lg md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
       <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
-        <div
-          class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
+              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left stats-card p-6 rounded-lg">
           <div>
-            <img
-              src="/assets/img/icon-project.svg"
-              class="mx-auto h-12 w-auto md:h-20"
-              alt="icon project"/>
+                  <img src="/assets/img/icon-project.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project"/>
           </div>
           <div class="pt-5 md:pl-5 md:pt-0">
             <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
               20
             </h1>
-            <h4
-              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                  <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
               Finished Projects
             </h4>
           </div>
         </div>
 
-        <div
-          class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
+              <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left stats-card p-6 rounded-lg">
           <div>
-            <img
-              src="/assets/img/icon-award.svg"
-              class="mx-auto h-12 w-auto md:h-20"
-              alt="icon award"/>
+                  <img src="/assets/img/icon-award.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon award"/>
           </div>
           <div class="pt-5 md:pl-5 md:pt-0">
             <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
               3
             </h1>
-            <h4
-              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                  <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
               Awards Won
             </h4>
           </div>
         </div>
 
-        <div
-          class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
+              <div class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0 stats-card p-6 rounded-lg">
           <div>
-            <img
-              src="/assets/img/icon-happy.svg"
-              class="mx-auto h-12 w-auto md:h-20"
-              alt="icon happy clients"/>
+                  <img src="/assets/img/icon-happy.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon happy clients"/>
           </div>
           <div class="pt-5 md:pl-5 md:pt-0">
             <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
               20
             </h1>
-            <h4
-              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                  <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
               Happy Clients
             </h4>
           </div>
         </div>
 
-        <div
-          class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
+              <div class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0 stats-card p-6 rounded-lg">
           <div>
-            <img
-              src="/assets/img/icon-puzzle.svg"
-              class="mx-auto h-12 w-auto md:h-20"
-              alt="icon puzzle"/>
+                  <img src="/assets/img/icon-puzzle.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle"/>
           </div>
           <div class="pt-5 md:pl-5 md:pt-0">
             <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
               99
             </h1>
-            <h4
-              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                  <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
               Bugs Fixed
             </h4>
           </div>
@@ -891,96 +1207,36 @@
   </div>
 </div>
 
-<!-- <div class="bg-grey-50" id="blog">
-  <div class="container py-16 md:py-20">
-    <h2
-      class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-      I also like to write
-    </h2>
-    <h4
-      class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-      Check out my latest posts!
-    </h4>
-    <div
-      class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-      <a href="/post" class="shadow">
-        <div
-          style="background-image: url(/assets/img/post-01.png)"
-          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-          <span
-            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-          <span
-            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read More</span>
-        </div>
-        <div class="bg-white py-6 px-5 xl:py-8">
-          <span class="block font-body text-lg font-semibold text-black">How to become a frontend developer</span>
-          <span class="block pt-2 font-body text-grey-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-        </div>
-      </a>
-      <a href="/post" class="shadow">
-        <div
-          style="background-image: url(/assets/img/post-02.png)"
-          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-          <span
-            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-          <span
-            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read More</span>
-        </div>
-        <div class="bg-white py-6 px-5 xl:py-8">
-          <span class="block font-body text-lg font-semibold text-black">My personal productivity system</span>
-          <span class="block pt-2 font-body text-grey-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-        </div>
-      </a>
-      <a href="/post" class="shadow">
-        <div
-          style="background-image: url(/assets/img/post-03.png)"
-          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-          <span
-            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-          <span
-            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read More</span>
-        </div>
-        <div class="bg-white py-6 px-5 xl:py-8">
-          <span class="block font-body text-lg font-semibold text-black">My year in review 2020</span>
-          <span class="block pt-2 font-body text-grey-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-        </div>
-      </a>
-    </div>
-  </div>-->
-</div> 
-
-<div class="container py-16 md:py-20" id="contact">
-    <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+      <div class="container py-16 md:py-20 section-transition" id="contact">
+        <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
       Get in Touch
     </h2>
-    <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+        <h4 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
       Have Any Questions or Want to Collaborate?
     </h4>
     <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-      <p class="font-body text-grey-10">
+          <p class="font-body text-white">
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. If you have any questions, feel free to ask, and I'll get back to you as soon as possible.
       </p>
     </div>
-<form action="https://formspree.io/f/xjkyyawg" method="POST" class="mx-auto w-full pt-10 sm:w-3/4">
+
+        <form action="https://formspree.io/f/xjkyyawg" method="POST" class="mx-auto w-full pt-10 sm:w-3/4 contact-form">
   <div class="flex flex-col md:flex-row">
     <input
-      class="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
+              class="mr-3 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:w-1/2 lg:mr-5"
       placeholder="Name"
       type="text"
       name="name"
       required />
     <input
-      class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
+              class="mt-6 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
       placeholder="Email"
       type="email"
       name="email"
       required />
   </div>
   <textarea
-    class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8"
+            class="mt-6 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:mt-8"
     placeholder="Message"
     name="message"
     cols="30"
@@ -988,41 +1244,39 @@
     required></textarea>
   <button
     type="submit"
-    class="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
+            class="mt-6 flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-primary/80 transition-all duration-300">
     Send
     <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
   </button>
 </form>
 
     <div class="flex flex-col pt-16 lg:flex-row">
-      <div class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
+          <div class="w-full glass-effect px-6 py-6 sm:py-8 lg:w-1/3 rounded-lg">
         <div class="flex items-center">
-          <i class="bx bx-phone text-2xl text-grey-40"></i>
-          <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+              <i class="bx bx-phone text-2xl text-primary"></i>
+              <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
             Phone
           </p>
         </div>
 <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-  <a href="tel:+18329886552">+1(832) 988-6552</a>
+              <a href="tel:+18329886552" class="animated-link">+1(832) 988-6552</a>
 </p>
-
       </div>
-      <div class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+          <div class="w-full glass-effect px-6 py-6 sm:py-8 lg:w-1/3 lg:ml-4 rounded-lg">
         <div class="flex items-center">
-          <i class="bx bx-envelope text-2xl text-grey-40"></i>
-          <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+              <i class="bx bx-envelope text-2xl text-primary"></i>
+              <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
             Email
           </p>
         </div>
 <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-  <a href="mailto:daniyalmurtaza77@gmail.com">daniyalmurtaza77@gmail.com</a>
+              <a href="mailto:daniyalmurtaza77@gmail.com" class="animated-link">daniyalmurtaza77@gmail.com</a>
 </p>
-
       </div>
-      <div class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+          <div class="w-full glass-effect px-6 py-6 sm:py-8 lg:w-1/3 lg:ml-4 rounded-lg">
         <div class="flex items-center">
-          <i class="bx bx-map text-2xl text-grey-40"></i>
-          <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+              <i class="bx bx-map text-2xl text-primary"></i>
+              <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
             Address
           </p>
         </div>
@@ -1033,58 +1287,25 @@
     </div>
   </div>
   
-
-<!-- <div
-  class="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
-  style="background-image: url(/assets/img/map.png)"></div> -->
-
-<!-- <div
-  class="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
-  style="background-image: url(/assets/img/bg-cta.jpg)">
-  <div class="container relative z-30">
-    <h3
-      class="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
-      Keep <span class="font-bold">up-to-date</span> <br/>
-      with what I'm up to
-    </h3>
-    <form class="mt-6 flex flex-col justify-center sm:flex-row">
-      <input
-        class="w-full rounded px-4 py-3 font-body text-black sm:w-2/5 sm:py-4 lg:w-1/3"
-        type="text"
-        id="email"
-        placeholder="Give me your Email"/>
-      <button
-        class="mt-2 rounded bg-yellow px-8 py-3 font-body text-base font-bold uppercase text-primary transition-colors hover:bg-primary hover:text-white focus:border-transparent focus:outline-none focus:ring focus:ring-yellow sm:ml-2 sm:mt-0 sm:py-4 md:text-lg">
-        Join the club
-      </button>
-    </form>
-  </div>
-</div>
-</div> -->
-
-      <div class="bg-primary">
+      <div class="bg-primary/10">
   <div class="container flex flex-col justify-between py-6 sm:flex-row">
     <p class="text-center font-body text-white md:text-left">
       © Copyright 2025. All right reserved
     </p>
     <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-<!--       <a href="/">
-        <i
-          class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-      </a> -->
-
-      <a href="https://github.com/Daniyal-Murtaza" class="pl-4">
-        <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+            <a href="https://github.com/Daniyal-Murtaza" class="pl-4 hover:text-primary transition-colors">
+              <i class="bx bxl-github text-2xl text-white"></i>
       </a>
-      <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4">
-        <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
+            <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4 hover:text-primary transition-colors">
+              <i class="bx bxl-whatsapp text-2xl text-white"></i>
       </a>
-      <a href="https://www.linkedin.com/in/daniyal-murtaza/" class="pl-4">
-        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+            <a href="https://www.linkedin.com/in/daniyal-murtaza/" class="pl-4 hover:text-primary transition-colors">
+              <i class="bx bxl-linkedin text-2xl text-white"></i>
       </a>
-
     </div>
   </div>
+      </div>
+
 </div>
 
     </div>
@@ -1097,5 +1318,127 @@
       data-site="KRXZMJGY"
       defer></script>
     
+  <div class="paper-plane">
+    <svg viewBox="0 0 24 24">
+      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+    </svg>
+  </div>
+
+  <div class="particles" id="particles"></div>
+
+  <script>
+    // Paper Plane Animation
+    const paperPlane = document.querySelector('.paper-plane');
+    let lastScrollY = window.scrollY;
+    let planeX = 0;
+    let planeY = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const scrollDelta = scrollY - lastScrollY;
+      
+      // Show paper plane when scrolling
+      paperPlane.style.opacity = Math.abs(scrollDelta) > 5 ? '1' : '0';
+      
+      // Update plane position
+      planeX += scrollDelta * 0.1;
+      planeY = scrollY * 0.1;
+      
+      // Keep plane within viewport
+      planeX = Math.max(0, Math.min(planeX, window.innerWidth - 40));
+      
+      paperPlane.style.transform = `translate(${planeX}px, ${planeY}px) rotate(${scrollDelta * 0.5}deg)`;
+      
+      lastScrollY = scrollY;
+    });
+
+    // Particle Background
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 20}s`;
+      particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+      particlesContainer.appendChild(particle);
+    }
+
+    // Floating Elements
+    const sections = document.querySelectorAll('section, .container');
+    sections.forEach(section => {
+      const elementCount = 3;
+      for (let i = 0; i < elementCount; i++) {
+        const element = document.createElement('div');
+        element.className = `floating-element ${['circle', 'square', 'triangle'][i]}`;
+        element.style.width = `${20 + Math.random() * 30}px`;
+        element.style.height = `${20 + Math.random() * 30}px`;
+        element.style.top = `${Math.random() * 100}%`;
+        element.style.left = `${Math.random() * 100}%`;
+        element.style.animationDelay = `${Math.random() * 5}s`;
+        section.appendChild(element);
+      }
+    });
+
+    // Scroll progress indicator
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollProgress.style.width = `${scrollPercent}%`;
+    });
+
+    // Enhanced section transitions
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Add staggered animation to child elements
+          const children = entry.target.querySelectorAll('.glass-effect, .portfolio-item, .stats-card');
+          children.forEach((child, index) => {
+            child.style.transitionDelay = `${index * 0.1}s`;
+          });
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-transition').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Add hover effect to timeline dots
+    document.querySelectorAll('.timeline-dot').forEach(dot => {
+      dot.addEventListener('mouseenter', () => {
+        dot.style.transform = 'scale(1.2)';
+        dot.style.boxShadow = '0 0 15px var(--primary)';
+      });
+      dot.addEventListener('mouseleave', () => {
+        dot.style.transform = 'scale(1)';
+        dot.style.boxShadow = 'none';
+      });
+    });
+
+    // Enhanced form interactions
+    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(input => {
+      input.addEventListener('focus', () => {
+        input.style.transform = 'translateY(-2px)';
+        input.style.boxShadow = '0 5px 15px rgba(0, 245, 212, 0.2)';
+      });
+      input.addEventListener('blur', () => {
+        input.style.transform = 'translateY(0)';
+        input.style.boxShadow = 'none';
+      });
+    });
+
+    // Add gradient text animation to headings
+    document.querySelectorAll('h1, h2, h3').forEach(heading => {
+      heading.classList.add('animated-gradient-text');
+    });
+  </script>
   </body>
 </html>
