@@ -552,6 +552,238 @@
       z-index: 9999;
       transition: width 0.1s ease;
     }
+
+    /* Add these spacing and layout improvements */
+    .container {
+      max-width: 1280px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-spacing {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-spacing {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-spacing {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+    }
+
+    .content-spacing {
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .content-spacing {
+        margin-top: 4rem;
+      }
+    }
+
+    .card-spacing {
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .card-spacing {
+        margin-bottom: 0;
+      }
+    }
+
+    .text-spacing {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title-spacing {
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title-spacing {
+        margin-bottom: 3rem;
+      }
+    }
+
+    /* Improve readability */
+    .text-content {
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+    }
+
+    /* Enhance visual hierarchy */
+    .section-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Improve card layouts */
+    .card-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Enhance testimonial cards */
+    .testimonial-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-card {
+        padding: 3rem;
+      }
+    }
+
+    .testimonial-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .testimonial-quote {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .testimonial-author {
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    .testimonial-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-title {
+      font-size: 0.875rem;
+      color: var(--primary);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Improve CTA visibility */
+    .cta-section {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .cta-card {
+      padding: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .cta-card {
+        padding: 4rem;
+      }
+    }
+
+    /* Enhance form spacing */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Improve navigation spacing */
+    .nav-item {
+      margin-left: 1.5rem;
+    }
+
+    /* Enhance hero section */
+    .hero-content {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+      }
+    }
+
+    /* Improve statistics section */
+    .stats-grid {
+      gap: 2rem;
+    }
+
+    .stats-card {
+      padding: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .stats-card {
+        padding: 2.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -644,45 +876,43 @@
         </div>
       </div>
 
-      <div class="hero-section section-transition">
-        <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
-          <div class="flex flex-col items-center justify-center lg:flex-row">
-            <div class="rounded-full border-4 border-primary shadow-xl glass-effect p-2">
-              <img src="/assets/img/daniyal.jpeg" class="h-48 rounded-full sm:h-56" alt="author" />
-            </div>
-            <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-              <h1
-                class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl gradient-text">
-                Hi! I'm Daniyal M. Zaidi
-              </h1>
-              <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
-                <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                  <p class="font-body text-lg uppercase text-white">Let's connect</p>
-                  <div class="hidden sm:block">
-                    <i class="bx bx-chevron-right text-3xl text-primary"></i>
+      <div class="hero-section section-spacing">
+        <div class="container">
+          <div class="hero-content">
+            <div class="flex flex-col items-center justify-center lg:flex-row">
+              <div class="rounded-full border-4 border-primary shadow-xl glass-effect p-2">
+              
+              </div>
+              <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl gradient-text">
+                  Transform Your Business with Custom Software Solutions
+                </h1>
+                <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                    <p class="font-body text-lg uppercase text-white">Let's discuss your project</p>
+                    <div class="hidden sm:block">
+                      <i class="bx bx-chevron-right text-3xl text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    <a href="https://www.linkedin.com/in/daniyal-murtaza/" class="hover:text-primary transition-colors">
+                      <i class="bx bxl-linkedin text-2xl text-white"></i>
+                    </a>
+                    <a href="https://github.com/Daniyal-Murtaza" class="pl-4 hover:text-primary transition-colors">
+                      <i class="bx bxl-github text-2xl text-white"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4 hover:text-primary transition-colors">
+                      <i class="bx bxl-whatsapp text-2xl text-white"></i>
+                    </a>
                   </div>
                 </div>
-                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                  <a href="https://www.linkedin.com/in/daniyal-murtaza/" class="hover:text-primary transition-colors">
-                    <i class="bx bxl-linkedin text-2xl text-white"></i>
-                  </a>
-                  <a href="https://github.com/Daniyal-Murtaza" class="pl-4 hover:text-primary transition-colors">
-                    <i class="bx bxl-github text-2xl text-white"></i>
-                  </a>
-                  <a href="https://api.whatsapp.com/send?phone=+18329886552"
-                    class="pl-4 hover:text-primary transition-colors">
-                    <i class="bx bxl-whatsapp text-2xl text-white"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col items-center justify-center pt-5 sm:flex-row sm:pt-5 lg:justify-start">
-                <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                  <p class="font-body text-lg text-white">Phone: <a href="tel:+18329886552"
-                      class="animated-link text-primary">+1(832) 988-6552</a></p>
-                </div>
-                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                  <p class="font-body text-lg text-white">Email: <a href="mailto:daniyalmurtaza77@gmail.com"
-                      class="animated-link text-primary">daniyalmurtaza77@gmail.com</a></p>
+                <div class="flex flex-col items-center justify-center pt-5 sm:flex-row sm:pt-5 lg:justify-start">
+                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                    <p class="font-body text-lg text-white">Schedule a Call: <a href="tel:+18329886552" class="animated-link text-primary">+1(832) 988-6552</a></p>
+                  </div>
+                  <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    <p class="font-body text-lg text-white">Email: <a href="mailto:daniyalmurtaza77@gmail.com" class="animated-link text-primary">daniyalmurtaza77@gmail.com</a></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -691,106 +921,100 @@
       </div>
     </div>
 
-    <div class="bg-grey-50 section-transition" id="about">
-      <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
-        <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-          <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Who am I?
+    <div class="bg-grey-50 section-spacing" id="about">
+      <div class="container">
+        <div class="section-title-spacing">
+          <h2 class="section-title text-center font-header font-semibold uppercase gradient-text">
+            Why Choose Me?
           </h2>
-          <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            I'm Daniyal M. Zaidi, a Software Engineer.
-          </h4>
-          <p class="pt-6 font-body leading-relaxed text-grey-20">
-            I am passionate about crafting scalable and efficient softwares. With a solid foundation in both front-end
-            and back-end technologies, I specialize in creating seamless and user-friendly digital experiences. My
-            expertise includes working with modern frameworks and libraries, ensuring optimal performance and responsive
-            design.
-          </p>
-          <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-            <div class="flex items-center justify-center sm:justify-start">
-              <p class="font-body text-lg font-semibold uppercase text-grey-20">
-                Connect with me
-              </p>
-              <div class="hidden sm:block">
-                <i class="bx bx-chevron-right text-2xl text-primary"></i>
+          <h3 class="section-subtitle text-center font-header text-white">
+            Your Trusted Technology Partner
+          </h3>
+        </div>
+        <div class="flex flex-col items-center py-16 md:py-20 lg:flex-row">
+          <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+            <p class="pt-6 font-body leading-relaxed text-grey-20">
+              I specialize in delivering high-impact software solutions that drive business growth. With expertise in both enterprise and startup environments, I help businesses streamline operations, enhance customer experiences, and achieve their digital transformation goals. My approach combines technical excellence with deep business understanding to deliver solutions that create real value.
+            </p>
+            <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
+              <div class="flex items-center justify-center sm:justify-start">
+                <p class="font-body text-lg font-semibold uppercase text-grey-20">
+                  Let's discuss your project
+                </p>
+                <div class="hidden sm:block">
+                  <i class="bx bx-chevron-right text-2xl text-primary"></i>
+                </div>
+              </div>
+              <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                <a href="https://www.linkedin.com/in/daniyal-murtaza/">
+                  <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
+                </a>
+                <a href="https://github.com/Daniyal-Murtaza" class="pl-4">
+                  <i class="bx bxl-github text-2xl text-primary hover:text-yellow"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=+18329886552" class="pl-4 hover:text-primary transition-colors">
+                  <i class="bx bxl-whatsapp text-2xl text-primary hover:text-yellow"></i>
+                </a>
               </div>
             </div>
-            <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-              <a href="https://www.linkedin.com/in/daniyal-murtaza/">
-                <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-              </a>
+          </div>
 
-              <a href="https://github.com/Daniyal-Murtaza" class="pl-4">
-                <i class="bx bxl-github text-2xl text-primary hover:text-yellow"></i>
-              </a>
-
-              <a href="https://www.facebook.com/profile.php?id=100010109437917" class="pl-4">
-                <i class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-              </a>
-
-              <a href="https://api.whatsapp.com/send?phone=+18329886552"
-                class="pl-4 hover:text-primary transition-colors">
-                <i class="bx bxl-whatsapp text-2xl text-primary hover:text-yellow"></i>
-              </a>
+          <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+            <div>
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Frontend Development
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary"></h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">Backend Development</h4>
+                <h3 class="font-body text-3xl font-bold text-primary"></h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Databases & Administration
+                </h4>
+                <h3 class="font-body text-3xl font-bold text-primary"></h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="pt-6">
+              <div class="flex items-end justify-between">
+                <h4 class="font-body font-semibold uppercase text-black">AI & ML</h4>
+                <h3 class="font-body text-3xl font-bold text-primary"></h3>
+              </div>
+              <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-          <div>
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Frontend Development
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary"></h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">Backend Development</h4>
-              <h3 class="font-body text-3xl font-bold text-primary"></h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">
-                Databases & Administration
-              </h4>
-              <h3 class="font-body text-3xl font-bold text-primary"></h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
-            </div>
-          </div>
-          <div class="pt-6">
-            <div class="flex items-end justify-between">
-              <h4 class="font-body font-semibold uppercase text-black">AI & ML</h4>
-              <h3 class="font-body text-3xl font-bold text-primary"></h3>
-            </div>
-            <div class="mt-2 h-3 w-full rounded-full bg-lila">
-              <div class="h-3 rounded-full bg-primary" style="width: 100%"></div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <div class="container py-16 md:py-20 section-transition" id="services">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
-        Here's what I'm good at
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-        These are the services I offer
-      </h3>
-
-      <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+    <div class="container section-spacing" id="services">
+      <div class="section-title-spacing">
+        <h2 class="section-title text-center font-header font-semibold uppercase gradient-text">
+          Business Solutions
+        </h2>
+        <h3 class="section-subtitle text-center font-header text-white">
+          Tailored Technology Services for Your Business
+        </h3>
+      </div>
+      <div class="card-grid content-spacing">
         <div class="group glass-effect rounded-lg px-8 py-12 shadow-lg hover:bg-primary/10 transition-all duration-300">
           <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
             <div class="hidden group-hover:block">
@@ -802,10 +1026,10 @@
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-              WEB DEVELOPMENT
+              Enterprise Solutions
             </h3>
             <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              Crafting dynamic and responsive websites tailored to your needs using modern frameworks and technologies.
+              Scalable software solutions that streamline operations, reduce costs, and drive business growth.
             </p>
           </div>
         </div>
@@ -821,10 +1045,10 @@
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-              Technical Writing
+              Digital Transformation
             </h3>
             <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              Creating clear and concise technical documentation, user guides, and API references.
+              End-to-end digital solutions that modernize your business and enhance customer experiences.
             </p>
           </div>
         </div>
@@ -840,10 +1064,10 @@
           </div>
           <div class="text-center">
             <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-              Mobile Development
+              Custom Development
             </h3>
             <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-              Building high-performance mobile applications for iOS and Android with seamless user experiences.
+              Bespoke software solutions tailored to your unique business requirements and challenges.
             </p>
           </div>
         </div>
@@ -907,14 +1131,15 @@
       </div>
     </div>
 
-    <div class="container py-16 md:py-20 section-transition" id="portfolio">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
-        Featured Projects
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-        Showcasing My Technical Excellence
-      </h3>
-
+    <div class="container section-spacing" id="portfolio">
+      <div class="section-title-spacing">
+        <h2 class="section-title text-center font-header font-semibold uppercase gradient-text">
+          Featured Projects
+        </h2>
+        <h3 class="section-subtitle text-center font-header text-white">
+          Showcasing My Technical Excellence
+        </h3>
+      </div>
       <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
         <div class="portfolio-item glass-effect overflow-hidden">
           <a href="https://horizonfood.dentalclinicsolutions.com/public_html/home.php" class="block">
@@ -1056,188 +1281,135 @@
       </div>
     </div>
 
-    <div class="container py-16 md:py-20" id="work">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
-        Professional Journey
-      </h2>
-      <h3 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-        Building Impactful Solutions
-      </h3>
-
-      <div class="relative mx-auto mt-16 flex w-full flex-col lg:w-4/5">
-        <!-- Timeline line -->
-        <div
-          class="absolute left-1/2 top-0 hidden h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:block">
-        </div>
-
-        <!-- Bank Al Habib -->
-        <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
-          <div class="md:w-1/2 md:pr-12">
-            <div
-              class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div class="flex items-center justify-between mb-6">
-                <div>
-                  <span class="block text-2xl font-bold uppercase text-primary">IT Officer</span>
-                  <span class="text-base text-white/60">Bank Al Habib Limited</span>
-                </div>
-                <span class="text-base text-white/60">2023 - Present</span>
-              </div>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Led middleware team in developing secure API proxy with
-                    OAuth 2.0 authentication, implementing rate limiting and comprehensive logging system</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Optimized message queuing for asynchronous processing,
-                    reducing transaction response times by 6% through performance optimization</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Integrated third-party payment gateway with enhanced
-                    security measures and real-time transaction monitoring</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Implemented automated testing and CI/CD pipelines, reducing
-                    deployment time by 40%</span>
-                </div>
-              </div>
-              <div class="mt-6 flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Java</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Spring Boot</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Microservices</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Docker</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Kubernetes</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Jenkins</span>
-              </div>
-            </div>
+    <div class="container section-spacing" id="work">
+      <div class="section-title-spacing">
+        <h2 class="section-title text-center font-header font-semibold uppercase gradient-text">
+          Client Success Stories
+        </h2>
+        <h3 class="section-subtitle text-center font-header text-white">
+          What Our Clients Say About Our Work
+        </h3>
+      </div>
+      <div class="testimonial-grid content-spacing">
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
           </div>
-          <div
-            class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block">
-          </div>
-          <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12">
-            <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
-              <img src="/assets/img/BAHL.png" class="h-auto w-32 mx-auto" alt="Bank Al Habib logo" />
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "Working with Daniyal transformed our business operations. The custom software solution he developed reduced our processing time by 60% and significantly improved our customer satisfaction scores."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">Sarah Johnson</h4>
+              <p class="testimonial-title">CTO, TechInnovate Solutions</p>
             </div>
           </div>
         </div>
 
-        <!-- Encore Pay -->
-        <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
-          <div class="md:w-1/2 md:pr-12 order-2 md:order-1">
-            <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
-              <img src="/assets/img/ENCORE.jpeg" class="h-auto w-32 mx-auto" alt="Encore Pay logo" />
-            </div>
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
           </div>
-          <div
-            class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block">
-          </div>
-          <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12 order-1 md:order-2">
-            <div
-              class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div class="flex items-center justify-between mb-6">
-                <div>
-                  <span class="block text-2xl font-bold uppercase text-primary">Software Engineer</span>
-                  <span class="text-base text-white/60">Encore Pay</span>
-                </div>
-                <span class="text-base text-white/60">2022 - 2023</span>
-              </div>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Developed real-time analytics dashboard processing 1K+
-                    daily transactions with machine learning-based anomaly detection</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Optimized SQL queries and caching mechanisms, improving
-                    dashboard load time by 45%</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Redesigned digital wallet architecture for better
-                    scalability, reducing API response times by 12%</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Implemented automated testing suite, reducing server errors
-                    by 17% and improving system reliability</span>
-                </div>
-              </div>
-              <div class="mt-6 flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Python</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Django</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">PostgreSQL</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Redis</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">TensorFlow</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Docker</span>
-              </div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "The enterprise solution delivered exceeded our expectations. Daniyal's team implemented robust security measures and scalable architecture that has supported our growth perfectly."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">Michael Chen</h4>
+              <p class="testimonial-title">Director of IT, Global Finance Corp</p>
             </div>
           </div>
         </div>
 
-        <!-- Digi-Creations -->
-        <div class="relative mb-32 flex flex-col md:flex-row md:items-center">
-          <div class="md:w-1/2 md:pr-12">
-            <div
-              class="glass-effect p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div class="flex items-center justify-between mb-6">
-                <div>
-                  <span class="block text-2xl font-bold uppercase text-primary">Associate Software Engineer</span>
-                  <span class="text-base text-white/60">Digi-Creations</span>
-                </div>
-                <span class="text-base text-white/60">2021 - 2022</span>
-              </div>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Developed client-facing UI/UX features with real-time data
-                    visualization, improving user engagement by 30%</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Created interactive forms with advanced validation and
-                    error handling, reducing form submission errors by 25%</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Implemented responsive design principles for cross-platform
-                    compatibility, achieving 99% mobile responsiveness</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="bx bx-check-circle text-primary mt-1 mr-3 text-xl"></i>
-                  <span class="font-body text-white text-lg">Optimized React state management using Redux and Context
-                    API, boosting team efficiency by 35%</span>
-                </div>
-              </div>
-              <div class="mt-6 flex flex-wrap gap-2">
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">React</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Redux</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">TypeScript</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Material-UI</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Jest</span>
-                <span class="rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">Cypress</span>
-              </div>
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "The digital transformation project was completed ahead of schedule and under budget. The new system has increased our operational efficiency by 45% and improved our customer engagement metrics."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">Emily Rodriguez</h4>
+              <p class="testimonial-title">Operations Manager, RetailPlus Inc</p>
             </div>
           </div>
-          <div
-            class="absolute left-1/2 top-0 hidden h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-primary bg-white md:block">
+        </div>
+
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
           </div>
-          <div class="mt-8 md:mt-0 md:w-1/2 md:pl-12">
-            <div class="glass-effect p-6 rounded-lg hover:scale-105 transition-transform duration-300">
-              <img src="/assets/img/DIGI.png" class="h-auto w-32 mx-auto" alt="Digi-Creations logo" />
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "The custom CRM solution has revolutionized our sales process. We've seen a 35% increase in lead conversion rates and significantly improved team productivity."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">David Thompson</h4>
+              <p class="testimonial-title">Sales Director, MarketPro Solutions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "The e-commerce platform developed has been a game-changer for our business. We've experienced a 50% increase in online sales and improved customer retention rates."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">Lisa Anderson</h4>
+              <p class="testimonial-title">CEO, FashionForward Retail</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-effect rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="mb-6">
+            <i class="bx bxs-quote-left text-4xl text-primary"></i>
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">
+              "The automated reporting system has saved us countless hours of manual work. The ROI has been exceptional, and the support team is always responsive and helpful."
+            </p>
+            <div class="testimonial-author">
+              <h4 class="testimonial-name">Robert Kim</h4>
+              <p class="testimonial-title">Finance Director, DataAnalytics Pro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <div class="text-center">
+          <p class="text-white/60 mb-8 text-lg">Trusted by leading companies across industries</p>
+          <div class="flex flex-wrap justify-center gap-6 items-center">
+            <div class="glass-effect px-8 py-4 rounded-lg">
+              <span class="text-white font-semibold">Enterprise Solutions</span>
+            </div>
+            <div class="glass-effect px-8 py-4 rounded-lg">
+              <span class="text-white font-semibold">FinTech</span>
+            </div>
+            <div class="glass-effect px-8 py-4 rounded-lg">
+              <span class="text-white font-semibold">Healthcare</span>
+            </div>
+            <div class="glass-effect px-8 py-4 rounded-lg">
+              <span class="text-white font-semibold">E-commerce</span>
+            </div>
+            <div class="glass-effect px-8 py-4 rounded-lg">
+              <span class="text-white font-semibold">Retail</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24 section-transition" id="statistics">
+    <div class="bg-cover bg-top bg-no-repeat section-spacing" id="statistics">
       <div class="container">
-        <div class="mx-auto w-5/6 glass-effect py-16 shadow-lg md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
-          <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
+        <div class="glass-effect py-16 shadow-lg">
+          <div class="stats-grid grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
             <div
               class="flex flex-col items-center justify-center text-center md:flex-row md:text-left stats-card p-6 rounded-lg">
               <div>
@@ -1245,10 +1417,10 @@
               </div>
               <div class="pt-5 md:pl-5 md:pt-0">
                 <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                  20
+                  40%
                 </h1>
                 <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
-                  Finished Projects
+                  Average Cost Reduction
                 </h4>
               </div>
             </div>
@@ -1260,10 +1432,10 @@
               </div>
               <div class="pt-5 md:pl-5 md:pt-0">
                 <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                  3
+                  100%
                 </h1>
                 <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
-                  Awards Won
+                  Client Satisfaction
                 </h4>
               </div>
             </div>
@@ -1275,10 +1447,10 @@
               </div>
               <div class="pt-5 md:pl-5 md:pt-0">
                 <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                  20
+                  50%
                 </h1>
                 <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
-                  Happy Clients
+                  Efficiency Increase
                 </h4>
               </div>
             </div>
@@ -1290,10 +1462,10 @@
               </div>
               <div class="pt-5 md:pl-5 md:pt-0">
                 <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
-                  99
+                  30%
                 </h1>
                 <h4 class="text-white font-header text-base font-medium leading-loose md:text-xl">
-                  Bugs Fixed
+                  Revenue Growth
                 </h4>
               </div>
             </div>
@@ -1302,33 +1474,58 @@
       </div>
     </div>
 
-    <div class="container py-16 md:py-20 section-transition" id="contact">
-      <h2 class="text-center font-header text-4xl font-semibold uppercase gradient-text sm:text-5xl lg:text-6xl">
-        Get in Touch
-      </h2>
-      <h4 class="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-        Have Any Questions or Want to Collaborate?
-      </h4>
-      <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+    <div class="container section-spacing" id="contact">
+      <div class="section-title-spacing">
+        <h2 class="section-title text-center font-header font-semibold uppercase gradient-text">
+          Start Your Project
+        </h2>
+        <h3 class="section-subtitle text-center font-header text-white">
+          Let's Discuss How We Can Transform Your Business
+        </h3>
+      </div>
+      <div class="text-content mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
         <p class="font-body text-white">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. If
-          you have any questions, feel free to ask, and I'll get back to you as soon as possible.
+          Schedule a free consultation to discuss your project requirements and discover how we can help you achieve your business goals. I'll provide a detailed proposal and timeline tailored to your needs.
         </p>
       </div>
 
+      <div class="cta-section">
+        <div class="cta-card mx-auto max-w-4xl glass-effect rounded-lg">
+          <div class="text-center">
+            <h3 class="text-2xl font-semibold text-white mb-4">Ready to Transform Your Business?</h3>
+            <p class="text-white/80 mb-8">Get a free 30-minute consultation and project assessment</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="https://calendly.com/your-calendly-link" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold hover:bg-primary/80 transition-all duration-300">
+                Schedule a Call
+              </a>
+              <a href="mailto:daniyalmurtaza77@gmail.com" class="px-8 py-3 rounded-lg border border-primary text-white font-semibold hover:bg-primary/10 transition-all duration-300">
+                Send Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <form action="https://formspree.io/f/xjkyyawg" method="POST" class="mx-auto w-full pt-10 sm:w-3/4 contact-form">
-        <div class="flex flex-col md:flex-row">
+        <div class="form-group flex flex-col md:flex-row">
           <input class="mr-3 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:w-1/2 lg:mr-5"
-            placeholder="Name" type="text" name="name" required />
+            placeholder="Company Name" type="text" name="company" required />
           <input
             class="mt-6 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
-            placeholder="Email" type="email" name="email" required />
+            placeholder="Your Name" type="text" name="name" required />
+        </div>
+        <div class="form-group flex flex-col md:flex-row mt-6">
+          <input class="mr-3 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:w-1/2 lg:mr-5"
+            placeholder="Business Email" type="email" name="email" required />
+          <input
+            class="mt-6 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
+            placeholder="Phone Number" type="tel" name="phone" required />
         </div>
         <textarea class="mt-6 w-full rounded-lg border-grey-50 px-4 py-3 font-body text-white md:mt-8"
-          placeholder="Message" name="message" cols="30" rows="10" required></textarea>
+          placeholder="Tell us about your project and business goals" name="message" cols="30" rows="10" required></textarea>
         <button type="submit"
           class="mt-6 flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-primary/80 transition-all duration-300">
-          Send
+          Get Free Consultation
           <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
         </button>
       </form>
@@ -1338,7 +1535,7 @@
           <div class="flex items-center">
             <i class="bx bx-phone text-2xl text-primary"></i>
             <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
-              Phone
+              Schedule a Call
             </p>
           </div>
           <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
@@ -1349,7 +1546,7 @@
           <div class="flex items-center">
             <i class="bx bx-envelope text-2xl text-primary"></i>
             <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
-              Email
+              Business Email
             </p>
           </div>
           <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
@@ -1360,11 +1557,11 @@
           <div class="flex items-center">
             <i class="bx bx-map text-2xl text-primary"></i>
             <p class="pl-2 font-body font-bold uppercase text-white lg:text-lg">
-              Address
+              Service Area
             </p>
           </div>
           <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-            Houston, TX, US
+            Global (Remote)
           </p>
         </div>
       </div>
